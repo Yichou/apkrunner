@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.apkrunner.lib"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+
+    <application>
+        <service
+            android:name="safiap.framework.SafFrameworkManager"
+            android:exported="true"
+            android:process="safiap.framework" >
+            <intent-filter android:priority="600" >
+                <action android:name="safiap.framework.sdk.ISAFFramework" />
+            </intent-filter>
+            <intent-filter android:priority="600" >
+                <action android:name="safiap.framework.ACTION_START_DOWNLOAD" />
+            </intent-filter>
+            <intent-filter android:priority="600" >
+                <action android:name="safiap.framework.ACTION_CHECK_UPDATE" />
+            </intent-filter>
+        </service>
+        
+
+        <!-- begin libApkRunner -->
+        <activity
+            android:name="com.apkrunner.QActivity"
+            android:configChanges="orientation|navigation|keyboardHidden|keyboard" />
+
+        <service android:name="com.apkrunner.QService" />
+
+        <!-- app0 -->
+        <activity
+            android:name="com.apkrunner.QActivity0"
+            android:allowTaskReparenting="true"
+            android:process=":app0"
+            android:taskAffinity="com.apkrunner.QApp0" >
+        </activity>
+
+        <service
+            android:name="com.apkrunner.QService0"
+            android:process=":app0" >
+        </service>
+
+        <!-- app1 -->
+        <activity
+            android:name="com.apkrunner.QActivity1"
+            android:allowTaskReparenting="true"
+            android:process=":app1"
+            android:taskAffinity="com.apkrunner.QApp1" >
+        </activity>
+
+        <service
+            android:name="com.apkrunner.QService1"
+            android:process=":app1" >
+        </service>
+
+        <!-- app2 -->
+        <activity
+            android:name="com.apkrunner.QActivity2"
+            android:allowTaskReparenting="true"
+            android:process=":app2"
+            android:taskAffinity="com.apkrunner.QApp2" >
+        </activity>
+
+        <service
+            android:name="com.apkrunner.QService2"
+            android:process=":app2" >
+        </service>
+
+        <!-- app3 -->
+        <activity
+            android:name="com.apkrunner.QActivity3"
+            android:allowTaskReparenting="true"
+            android:process=":app3"
+            android:taskAffinity="com.apkrunner.QApp3" >
+        </activity>
+
+        <service
+            android:name="com.apkrunner.QService3"
+            android:process=":app3" >
+        </service>
+
+        <!-- app4 -->
+        <activity
+            android:name="com.apkrunner.QActivity4"
+            android:allowTaskReparenting="true"
+            android:process=":app4"
+            android:taskAffinity="com.apkrunner.QApp4" >
+        </activity>
+
+        <service
+            android:name="com.apkrunner.QService4"
+            android:process=":app4" >
+        </service>
+
+        <!-- app5 -->
+        <activity
+            android:name="com.apkrunner.QActivity5"
+            android:allowTaskReparenting="true"
+            android:process=":app5"
+            android:taskAffinity="com.apkrunner.QApp5" >
+        </activity>
+
+        <service
+            android:name="com.apkrunner.QService5"
+            android:process=":app5" >
+        </service>
+
+        <!-- end libApkRunner -->
+
+        <uses-library android:name="android.test.runner" />
+    </application>
+
+</manifest>
